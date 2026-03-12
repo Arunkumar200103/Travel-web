@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-sans: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+  --background: #ffffff;
+  --foreground: #1E1D4C;
+  --card: #ffffff;
+  --card-foreground: #1E1D4C;
+  --popover: #ffffff;
+  --popover-foreground: #1E1D4C;
+  --primary: #F1A501;
+  --primary-foreground: #ffffff;
+  --secondary: #5E6282;
+  --secondary-foreground: #ffffff;
+  --muted: #F7F7F7;
+  --muted-foreground: #5E6282;
+  --accent: #DF6951;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #E5E5E5;
+  --input: #E5E5E5;
+  --ring: #F1A501;
+  --radius: 0.625rem;
+  
+  /* Custom Jadoo colors */
+  --jadoo-orange: #F1A501;
+  --jadoo-coral: #DF6951;
+  --jadoo-navy: #1E1D4C;
+  --jadoo-gray: #5E6282;
+  --jadoo-light-gray: #F7F7F7;
+  --jadoo-purple: #6246EA;
+  --jadoo-subscribe-bg: #DFD7F9;
+}
+
+@theme inline {
+  --font-sans: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom max-width for large screens */
+@media (min-width: 1920px) {
+  .max-w-\[1440px\] {
+    max-width: 1440px;
+  }
+}
+
+/* Ensure images don't overflow on mobile */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hide scrollbar but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
